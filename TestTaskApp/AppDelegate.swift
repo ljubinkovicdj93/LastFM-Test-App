@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+let BASE_URL = "http://ws.audioscrobbler.com/2.0/"
+let API_KEY = "e1116ff78e72bee82a5e4e0db782ea05"
+let SHARED_SECRET = "c4a4a0d01d392a42d33cba18b080e65b"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

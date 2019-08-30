@@ -15,6 +15,11 @@
 		23E59D8F2319ADF50050B1B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E59D8D2319ADF50050B1B7 /* LaunchScreen.storyboard */; };
 		23E59D9A2319ADF60050B1B7 /* TestTaskAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59D992319ADF60050B1B7 /* TestTaskAppTests.swift */; };
 		23E59DA52319ADF60050B1B7 /* TestTaskAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DA42319ADF60050B1B7 /* TestTaskAppUITests.swift */; };
+		23E59DB42319BE070050B1B7 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DB32319BE070050B1B7 /* Artist.swift */; };
+		23E59DB62319BEE30050B1B7 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DB52319BEE30050B1B7 /* Album.swift */; };
+		23E59DB82319C3D50050B1B7 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DB72319C3D50050B1B7 /* Track.swift */; };
+		23E59DBA2319C4280050B1B7 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DB92319C4280050B1B7 /* Tag.swift */; };
+		23E59DBC2319C4A30050B1B7 /* AlbumInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DBB2319C4A30050B1B7 /* AlbumInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		23E59DA02319ADF60050B1B7 /* TestTaskAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTaskAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E59DA42319ADF60050B1B7 /* TestTaskAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTaskAppUITests.swift; sourceTree = "<group>"; };
 		23E59DA62319ADF60050B1B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23E59DB32319BE070050B1B7 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		23E59DB52319BEE30050B1B7 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		23E59DB72319C3D50050B1B7 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		23E59DB92319C4280050B1B7 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		23E59DBB2319C4A30050B1B7 /* AlbumInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		23E59D802319ADF40050B1B7 /* TestTaskApp */ = {
 			isa = PBXGroup;
 			children = (
+				23E59DB22319BDF70050B1B7 /* Models */,
 				23E59D812319ADF40050B1B7 /* AppDelegate.swift */,
 				23E59D832319ADF40050B1B7 /* ViewController.swift */,
 				23E59D852319ADF40050B1B7 /* Main.storyboard */,
@@ -126,6 +137,18 @@
 				23E59DA62319ADF60050B1B7 /* Info.plist */,
 			);
 			path = TestTaskAppUITests;
+			sourceTree = "<group>";
+		};
+		23E59DB22319BDF70050B1B7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23E59DB32319BE070050B1B7 /* Artist.swift */,
+				23E59DB52319BEE30050B1B7 /* Album.swift */,
+				23E59DB72319C3D50050B1B7 /* Track.swift */,
+				23E59DB92319C4280050B1B7 /* Tag.swift */,
+				23E59DBB2319C4A30050B1B7 /* AlbumInformation.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23E59DBC2319C4A30050B1B7 /* AlbumInformation.swift in Sources */,
 				23E59D842319ADF40050B1B7 /* ViewController.swift in Sources */,
 				23E59D8A2319ADF40050B1B7 /* TestTaskApp.xcdatamodeld in Sources */,
+				23E59DB42319BE070050B1B7 /* Artist.swift in Sources */,
+				23E59DBA2319C4280050B1B7 /* Tag.swift in Sources */,
 				23E59D822319ADF40050B1B7 /* AppDelegate.swift in Sources */,
+				23E59DB62319BEE30050B1B7 /* Album.swift in Sources */,
+				23E59DB82319C3D50050B1B7 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
