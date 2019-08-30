@@ -1,0 +1,6 @@
+framework module Pods_TestTaskAppTests {
+  umbrella header "Pods-TestTaskAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
