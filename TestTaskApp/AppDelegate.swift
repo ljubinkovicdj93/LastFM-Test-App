@@ -10,35 +10,45 @@ import UIKit
 import CoreData
 import Alamofire
 
-let BASE_URL = "http://ws.audioscrobbler.com/2.0/"
-let API_KEY = "e1116ff78e72bee82a5e4e0db782ea05"
-let SHARED_SECRET = "c4a4a0d01d392a42d33cba18b080e65b"
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         #warning("TODO: Remove, use to test only.")
-        // Fetches album info
-        // http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=e1116ff78e72bee82a5e4e0db782ea05&artist=Cher&album=Believe&format=json
-        Alamofire.request("\(BASE_URL)?method=album.getinfo&api_key=\(API_KEY)&artist=Cher&album=Believe&format=json").responseJSON { response in
+//        Alamofire.request(Router.AlbumsRoute.searchRoute(albumName: "Believe")).responseJSON { response in
+//
+//            print("Request: \(String(describing: response.request))")   // original url request
+//            print("Response: \(String(describing: response.response))") // http url response
+//            print("Result: \(response.result)")                         // response serialization result
+//
+//            switch response.result {
+//            case .success:
+//                print("Validation Successful")
+//                debugPrint(response)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+        
+        Alamofire.request(Router.AlbumsRoute.getInfoRoute(artistName: "Cher", albumName: "Believe")).responseJSON { response in
+            
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
             
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-            }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
+            switch response.result {
+            case .success:
+                print("Validation Successful")
+                debugPrint(response)
+            case .failure(let error):
+                print(error)
             }
         }
+
         
         return true
     }

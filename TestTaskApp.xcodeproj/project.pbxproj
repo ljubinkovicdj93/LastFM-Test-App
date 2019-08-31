@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		080AE931F221209E693A8E04 /* Pods_TestTaskAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB96B62B471763DD831E4D4 /* Pods_TestTaskAppUITests.framework */; };
+		236047882319CB9300AB2AAE /* RoutesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236047872319CB9300AB2AAE /* RoutesProtocol.swift */; };
+		2360478A2319CCDB00AB2AAE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236047892319CCDB00AB2AAE /* Router.swift */; };
 		23E59D822319ADF40050B1B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59D812319ADF40050B1B7 /* AppDelegate.swift */; };
 		23E59D842319ADF40050B1B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59D832319ADF40050B1B7 /* ViewController.swift */; };
 		23E59D872319ADF40050B1B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E59D852319ADF40050B1B7 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		1BB96B62B471763DD831E4D4 /* Pods_TestTaskAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTaskAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		236047872319CB9300AB2AAE /* RoutesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesProtocol.swift; sourceTree = "<group>"; };
+		236047892319CCDB00AB2AAE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		23E59D7E2319ADF40050B1B7 /* TestTaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E59D812319ADF40050B1B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23E59D832319ADF40050B1B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		236047862319CB8700AB2AAE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				236047872319CB9300AB2AAE /* RoutesProtocol.swift */,
+				236047892319CCDB00AB2AAE /* Router.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		23E59D752319ADF40050B1B7 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +139,7 @@
 		23E59D802319ADF40050B1B7 /* TestTaskApp */ = {
 			isa = PBXGroup;
 			children = (
+				236047862319CB8700AB2AAE /* Networking */,
 				23E59DB22319BDF70050B1B7 /* Models */,
 				23E59D812319ADF40050B1B7 /* AppDelegate.swift */,
 				23E59D832319ADF40050B1B7 /* ViewController.swift */,
@@ -178,7 +192,6 @@
 				53177CB7A76CEF3AAFDC50E5 /* Pods-TestTaskAppUITests.debug.xcconfig */,
 				41C7C2A801F43B470829ED17 /* Pods-TestTaskAppUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -415,8 +428,10 @@
 			files = (
 				23E59DBC2319C4A30050B1B7 /* AlbumInformation.swift in Sources */,
 				23E59D842319ADF40050B1B7 /* ViewController.swift in Sources */,
+				2360478A2319CCDB00AB2AAE /* Router.swift in Sources */,
 				23E59D8A2319ADF40050B1B7 /* TestTaskApp.xcdatamodeld in Sources */,
 				23E59DB42319BE070050B1B7 /* Artist.swift in Sources */,
+				236047882319CB9300AB2AAE /* RoutesProtocol.swift in Sources */,
 				23E59DBA2319C4280050B1B7 /* Tag.swift in Sources */,
 				23E59D822319ADF40050B1B7 /* AppDelegate.swift in Sources */,
 				23E59DB62319BEE30050B1B7 /* Album.swift in Sources */,
