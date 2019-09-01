@@ -19,33 +19,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         #warning("TODO: Remove, use to test only.")
-//        Alamofire.request(Router.AlbumsRoute.searchRoute(albumName: "Believe")).responseJSON { response in
-//
-//            print("Request: \(String(describing: response.request))")   // original url request
-//            print("Response: \(String(describing: response.response))") // http url response
-//            print("Result: \(response.result)")                         // response serialization result
-//
-//            switch response.result {
-//            case .success:
-//                print("Validation Successful")
-//                debugPrint(response)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-        
-        Alamofire.request(Router.AlbumsRoute.getInfoRoute(artistName: "Cher", albumName: "Believe")).responseJSON { response in
-            
+        AF.request(Router.AlbumsRoute.searchRoute(albumName: "Believe")).responseDecodable { (response: DataResponse<AlbumSearchResults>) in
+
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
-            
+
             switch response.result {
             case .success:
                 print("Validation Successful")
                 debugPrint(response)
             case .failure(let error):
-                print(error)
+                fatalError(error.localizedDescription)
+            }
+        }
+        
+        AF.request(Router.AlbumsRoute.getInfoRoute(artistName: "Cher", albumName: "Believe")).responseDecodable { (response: DataResponse<AlbumResult>) in
+
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+
+            switch response.result {
+            case .success:
+                print("Validation Successful")
+                debugPrint(response)
+            case .failure(let error):
+                fatalError(error.localizedDescription)
             }
         }
 
@@ -124,3 +124,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+struct AlbumSearchResults: Decodable {
+    let results: AlbumMatches
+}
+
+struct AlbumMatches: Decodable {
+    let albummatches: AlbumSearchResult
+}
+
+struct AlbumSearchResult: Decodable {
+    let album: [Album]
+}
+
+
+struct AlbumResult: Decodable {
+    let album: Album
+}

@@ -31,12 +31,10 @@ struct Router: URLRouter {
         return components
     }
     
-    // http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=e1116ff78e72bee82a5e4e0db782ea05&artist=Cher&album=Believe&format=json
     struct AlbumsRoute: Readable {
         var route: String = ""
         var queryItems: QueryItems!
     }
-    
 }
 
 extension Router.AlbumsRoute {

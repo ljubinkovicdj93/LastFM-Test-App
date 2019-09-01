@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		080AE931F221209E693A8E04 /* Pods_TestTaskAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB96B62B471763DD831E4D4 /* Pods_TestTaskAppUITests.framework */; };
+		231D0873231C4BD0005A99E4 /* DateFormatter+constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D0872231C4BD0005A99E4 /* DateFormatter+constants.swift */; };
 		236047882319CB9300AB2AAE /* RoutesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236047872319CB9300AB2AAE /* RoutesProtocol.swift */; };
 		2360478A2319CCDB00AB2AAE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236047892319CCDB00AB2AAE /* Router.swift */; };
 		23E59D822319ADF40050B1B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59D812319ADF40050B1B7 /* AppDelegate.swift */; };
@@ -22,7 +23,6 @@
 		23E59DB62319BEE30050B1B7 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DB52319BEE30050B1B7 /* Album.swift */; };
 		23E59DB82319C3D50050B1B7 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DB72319C3D50050B1B7 /* Track.swift */; };
 		23E59DBA2319C4280050B1B7 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DB92319C4280050B1B7 /* Tag.swift */; };
-		23E59DBC2319C4A30050B1B7 /* AlbumInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DBB2319C4A30050B1B7 /* AlbumInformation.swift */; };
 		23EB591A231A92AB00288A78 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB5919231A92AB00288A78 /* Environment.swift */; };
 		74461AFC726F4A8BD5F563B9 /* Pods_TestTaskAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE10B06E55DC8FD86ADD337E /* Pods_TestTaskAppTests.framework */; };
 		BFD122D392B48081D9AC7B6E /* Pods_TestTaskApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66CBE0E190621803DA0EAFD /* Pods_TestTaskApp.framework */; };
@@ -47,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		1BB96B62B471763DD831E4D4 /* Pods_TestTaskAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTaskAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		231D0872231C4BD0005A99E4 /* DateFormatter+constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+constants.swift"; sourceTree = "<group>"; };
 		236047872319CB9300AB2AAE /* RoutesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesProtocol.swift; sourceTree = "<group>"; };
 		236047892319CCDB00AB2AAE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		23E59D7E2319ADF40050B1B7 /* TestTaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +68,6 @@
 		23E59DB52319BEE30050B1B7 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		23E59DB72319C3D50050B1B7 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		23E59DB92319C4280050B1B7 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
-		23E59DBB2319C4A30050B1B7 /* AlbumInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInformation.swift; sourceTree = "<group>"; };
 		23EB5919231A92AB00288A78 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		23EB591C231A934400288A78 /* Develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Develop.xcconfig; sourceTree = "<group>"; };
 		41C7C2A801F43B470829ED17 /* Pods-TestTaskAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TestTaskAppUITests/Pods-TestTaskAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +108,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		231D0870231C4BBC005A99E4 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				231D0871231C4BC0005A99E4 /* Date */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		231D0871231C4BC0005A99E4 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				231D0872231C4BD0005A99E4 /* DateFormatter+constants.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
 		236047862319CB8700AB2AAE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +158,7 @@
 		23E59D802319ADF40050B1B7 /* TestTaskApp */ = {
 			isa = PBXGroup;
 			children = (
+				231D0870231C4BBC005A99E4 /* Formatters */,
 				23EB5918231A929F00288A78 /* Configuration */,
 				236047862319CB8700AB2AAE /* Networking */,
 				23E59DB22319BDF70050B1B7 /* Models */,
@@ -181,7 +198,6 @@
 				23E59DB52319BEE30050B1B7 /* Album.swift */,
 				23E59DB72319C3D50050B1B7 /* Track.swift */,
 				23E59DB92319C4280050B1B7 /* Tag.swift */,
-				23E59DBB2319C4A30050B1B7 /* AlbumInformation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -447,8 +463,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23E59DBC2319C4A30050B1B7 /* AlbumInformation.swift in Sources */,
 				23E59D842319ADF40050B1B7 /* ViewController.swift in Sources */,
+				231D0873231C4BD0005A99E4 /* DateFormatter+constants.swift in Sources */,
 				2360478A2319CCDB00AB2AAE /* Router.swift in Sources */,
 				23E59D8A2319ADF40050B1B7 /* TestTaskApp.xcdatamodeld in Sources */,
 				23E59DB42319BE070050B1B7 /* Artist.swift in Sources */,
@@ -573,6 +589,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -630,6 +647,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

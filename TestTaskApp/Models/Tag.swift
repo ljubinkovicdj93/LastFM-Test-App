@@ -8,6 +8,11 @@
 
 import Foundation
 
+// MARK: - TagResponse
+struct TagResponse: Codable {
+    let tag: [Tag]
+}
+
 // MARK: - Tag
 struct Tag: Codable {
     let name: String

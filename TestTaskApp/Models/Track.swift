@@ -8,8 +8,13 @@
 
 import Foundation
 
+// MARK: - TrackResponse
+struct TracksResponse: Decodable {
+    let track: [Track]
+}
+
 // MARK: - Track
-struct Track: Codable {
+struct Track: Decodable {
     let name: String
     let url: String
     let duration: String
@@ -31,7 +36,8 @@ struct Attribute: Codable {
 
 // MARK: - Streamable
 struct Streamable: Codable {
-    let text, fulltrack: String
+    let text: String
+    let fulltrack: String
     
     enum CodingKeys: String, CodingKey {
         case text = "#text"
