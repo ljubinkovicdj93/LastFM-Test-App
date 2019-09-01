@@ -54,5 +54,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LAST_FM_BASE_URL_HOST</key>
+	<string>$(LAST_FM_BASE_URL_HOST)</string>
+	<key>LAST_FM_API_KEY</key>
+	<string>$(LAST_FM_API_KEY)</string>
+	<key>LAST_FM_SHARED_SECRET</key>
+	<string>$(LAST_FM_SHARED_SECRET)</string>
 </dict>
 </plist>

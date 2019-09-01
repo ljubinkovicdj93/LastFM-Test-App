@@ -8,10 +8,6 @@
 
 import Alamofire
 
-let BASE_URL = "http://ws.audioscrobbler.com/2.0/"
-let API_KEY = "e1116ff78e72bee82a5e4e0db782ea05"
-let SHARED_SECRET = "c4a4a0d01d392a42d33cba18b080e65b"
-
 /// Protocol that allows us to implement a base URL for our application
 protocol URLRouter {
     static var basePathComponents: URLComponents { get }
@@ -21,13 +17,15 @@ struct Router: URLRouter {
     static var basePathComponents: URLComponents {
         var components = URLComponents()
         components.scheme = "http"
-        components.host = "ws.audioscrobbler.com"
+        components.host = Environment().configuration(PlistKey.serverUrlDomainName)
         components.path = "/2.0/"
         
         // Query items that go with all requests.
         components.queryItems = [
-            URLQueryItem(name: "api_key", value: API_KEY),
-            URLQueryItem(name: "format", value: "json")
+            URLQueryItem(name: "api_key",
+                         value: Environment().configuration(PlistKey.apiKey)),
+            URLQueryItem(name: "format",
+                         value: "json")
         ]
         
         return components

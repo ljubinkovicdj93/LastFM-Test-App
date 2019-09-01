@@ -23,6 +23,7 @@
 		23E59DB82319C3D50050B1B7 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DB72319C3D50050B1B7 /* Track.swift */; };
 		23E59DBA2319C4280050B1B7 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DB92319C4280050B1B7 /* Tag.swift */; };
 		23E59DBC2319C4A30050B1B7 /* AlbumInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E59DBB2319C4A30050B1B7 /* AlbumInformation.swift */; };
+		23EB591A231A92AB00288A78 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB5919231A92AB00288A78 /* Environment.swift */; };
 		74461AFC726F4A8BD5F563B9 /* Pods_TestTaskAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE10B06E55DC8FD86ADD337E /* Pods_TestTaskAppTests.framework */; };
 		BFD122D392B48081D9AC7B6E /* Pods_TestTaskApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66CBE0E190621803DA0EAFD /* Pods_TestTaskApp.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,8 @@
 		23E59DB72319C3D50050B1B7 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		23E59DB92319C4280050B1B7 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		23E59DBB2319C4A30050B1B7 /* AlbumInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInformation.swift; sourceTree = "<group>"; };
+		23EB5919231A92AB00288A78 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		23EB591C231A934400288A78 /* Develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Develop.xcconfig; sourceTree = "<group>"; };
 		41C7C2A801F43B470829ED17 /* Pods-TestTaskAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TestTaskAppUITests/Pods-TestTaskAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		53177CB7A76CEF3AAFDC50E5 /* Pods-TestTaskAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestTaskAppUITests/Pods-TestTaskAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B8E46E4A6806546F7CDD382 /* Pods-TestTaskApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskApp.release.xcconfig"; path = "Target Support Files/Pods-TestTaskApp/Pods-TestTaskApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 		23E59D802319ADF40050B1B7 /* TestTaskApp */ = {
 			isa = PBXGroup;
 			children = (
+				23EB5918231A929F00288A78 /* Configuration */,
 				236047862319CB8700AB2AAE /* Networking */,
 				23E59DB22319BDF70050B1B7 /* Models */,
 				23E59D812319ADF40050B1B7 /* AppDelegate.swift */,
@@ -180,6 +184,23 @@
 				23E59DBB2319C4A30050B1B7 /* AlbumInformation.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		23EB5918231A929F00288A78 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				23EB591B231A932B00288A78 /* Environments */,
+				23EB5919231A92AB00288A78 /* Environment.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		23EB591B231A932B00288A78 /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				23EB591C231A934400288A78 /* Develop.xcconfig */,
+			);
+			path = Environments;
 			sourceTree = "<group>";
 		};
 		35CF5108F6AB151509F3B1C8 /* Pods */ = {
@@ -433,6 +454,7 @@
 				23E59DB42319BE070050B1B7 /* Artist.swift in Sources */,
 				236047882319CB9300AB2AAE /* RoutesProtocol.swift in Sources */,
 				23E59DBA2319C4280050B1B7 /* Tag.swift in Sources */,
+				23EB591A231A92AB00288A78 /* Environment.swift in Sources */,
 				23E59D822319ADF40050B1B7 /* AppDelegate.swift in Sources */,
 				23E59DB62319BEE30050B1B7 /* Album.swift in Sources */,
 				23E59DB82319C3D50050B1B7 /* Track.swift in Sources */,
@@ -542,6 +564,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LAST_FM_API_KEY = e1116ff78e72bee82a5e4e0db782ea05;
+				LAST_FM_BASE_URL_HOST = ws.audioscrobbler.com;
+				LAST_FM_SHARED_SECRET = c4a4a0d01d392a42d33cba18b080e65b;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -597,6 +622,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LAST_FM_API_KEY = e1116ff78e72bee82a5e4e0db782ea05;
+				LAST_FM_BASE_URL_HOST = ws.audioscrobbler.com;
+				LAST_FM_SHARED_SECRET = c4a4a0d01d392a42d33cba18b080e65b;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

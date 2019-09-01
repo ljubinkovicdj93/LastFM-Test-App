@@ -1,0 +1,14 @@
+//
+//  Develop.xcconfig
+//  TestTaskApp
+//
+//  Created by Djordje Ljubinkovic on 8/31/19.
+//  Copyright © 2019 Djordje Ljubinkovic. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+LAST_FM_BASE_URL_HOST = ws.audioscrobbler.com
+LAST_FM_API_KEY = e1116ff78e72bee82a5e4e0db782ea05
+LAST_FM_SHARED_SECRET = c4a4a0d01d392a42d33cba18b080e65b
