@@ -8,18 +8,14 @@
 
 import UIKit
 
-class AlbumCell: UICollectionViewCell {
+class AlbumCell: UICollectionViewCell, ConfigurableCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var artistLabel: UILabel!
     @IBOutlet private weak var albumImageView: UIImageView!
     
-    var album: Album? {
-        didSet {
-            if let album = album {
-                nameLabel.text = album.name
-                artistLabel.text = album.artist
-                albumImageView.image = UIImage(named: album.images.last!.text)
-            }
-        }
+    func configure(_ item: Album) {
+        nameLabel.text = item.name
+        artistLabel.text = item.artist
+        albumImageView.image = UIImage(named: item.images.last!.text)
     }
 }

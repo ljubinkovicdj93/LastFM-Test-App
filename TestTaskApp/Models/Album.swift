@@ -8,6 +8,13 @@
 
 import Foundation
 
+#warning("TODO: Remove, testing purposes...")
+extension Album: CustomStringConvertible {
+    var description: String {
+        return "\n\nName: \(self.name)\nArtist Name: \(self.artist)\nImage URL: \(self.images.last?.text ?? "no image url")\n\n"
+    }
+}
+
 // MARK: - Album
 struct Album: Decodable {
     let name: String
