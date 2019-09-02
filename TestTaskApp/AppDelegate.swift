@@ -17,39 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        #warning("TODO: Remove, use to test only.")
-        AF.request(Router.AlbumsRoute.searchRoute(albumName: "Believe")).responseDecodable { (response: DataResponse<AlbumSearchResults>) in
-
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-
-            switch response.result {
-            case .success:
-                print("Validation Successful")
-                debugPrint(response)
-            case .failure(let error):
-                fatalError(error.localizedDescription)
-            }
-        }
-        
-        AF.request(Router.AlbumsRoute.getInfoRoute(artistName: "Cher", albumName: "Believe")).responseDecodable { (response: DataResponse<AlbumResult>) in
-
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-
-            switch response.result {
-            case .success:
-                print("Validation Successful")
-                debugPrint(response)
-            case .failure(let error):
-                fatalError(error.localizedDescription)
-            }
-        }
-
-        
         return true
     }
 
