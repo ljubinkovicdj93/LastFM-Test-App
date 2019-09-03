@@ -11,6 +11,9 @@
 		231D0873231C4BD0005A99E4 /* DateFormatter+constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D0872231C4BD0005A99E4 /* DateFormatter+constants.swift */; };
 		236047882319CB9300AB2AAE /* RoutesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236047872319CB9300AB2AAE /* RoutesProtocol.swift */; };
 		2360478A2319CCDB00AB2AAE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236047892319CCDB00AB2AAE /* Router.swift */; };
+		23B466D0231E70F600213F59 /* ArtistDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B466CF231E70F600213F59 /* ArtistDataSource.swift */; };
+		23B466D6231E773100213F59 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B466D4231E773100213F59 /* ArtistCell.swift */; };
+		23B466D7231E773100213F59 /* ArtistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23B466D5231E773100213F59 /* ArtistCell.xib */; };
 		23BB9C68231DB31900DB7FB5 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB9C67231DB31900DB7FB5 /* AlbumCell.swift */; };
 		23BB9C6A231DB32E00DB7FB5 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23BB9C69231DB32E00DB7FB5 /* AlbumCell.xib */; };
 		23BB9C6E231DB71900DB7FB5 /* CollectionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB9C6D231DB71900DB7FB5 /* CollectionDataProvider.swift */; };
@@ -60,6 +63,9 @@
 		231D0872231C4BD0005A99E4 /* DateFormatter+constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+constants.swift"; sourceTree = "<group>"; };
 		236047872319CB9300AB2AAE /* RoutesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesProtocol.swift; sourceTree = "<group>"; };
 		236047892319CCDB00AB2AAE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		23B466CF231E70F600213F59 /* ArtistDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDataSource.swift; sourceTree = "<group>"; };
+		23B466D4231E773100213F59 /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
+		23B466D5231E773100213F59 /* ArtistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistCell.xib; sourceTree = "<group>"; };
 		23BB9C67231DB31900DB7FB5 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		23BB9C69231DB32E00DB7FB5 /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
 		23BB9C6D231DB71900DB7FB5 /* CollectionDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDataProvider.swift; sourceTree = "<group>"; };
@@ -164,10 +170,12 @@
 		23BB9C66231DB30200DB7FB5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				23BB9C67231DB31900DB7FB5 /* AlbumCell.swift */,
-				23BB9C69231DB32E00DB7FB5 /* AlbumCell.xib */,
 				23BB9C73231DB78800DB7FB5 /* ReusableCell.swift */,
 				23BB9C75231DB79500DB7FB5 /* ConfigurableCell.swift */,
+				23BB9C67231DB31900DB7FB5 /* AlbumCell.swift */,
+				23BB9C69231DB32E00DB7FB5 /* AlbumCell.xib */,
+				23B466D4231E773100213F59 /* ArtistCell.swift */,
+				23B466D5231E773100213F59 /* ArtistCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 				23BB9C71231DB75B00DB7FB5 /* CollectionDataSource.swift */,
 				23BB9C7A231DB7FF00DB7FB5 /* CollectionArrayDataSource.swift */,
 				23BB9C7C231DBD0600DB7FB5 /* AlbumDataSource.swift */,
+				23B466CF231E70F600213F59 /* ArtistDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -420,6 +429,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B466D7231E773100213F59 /* ArtistCell.xib in Resources */,
 				23E59D8F2319ADF50050B1B7 /* LaunchScreen.storyboard in Resources */,
 				23E59D8C2319ADF50050B1B7 /* Assets.xcassets in Resources */,
 				23E59D872319ADF40050B1B7 /* Main.storyboard in Resources */,
@@ -534,12 +544,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B466D6231E773100213F59 /* ArtistCell.swift in Sources */,
 				23BB9C7D231DBD0600DB7FB5 /* AlbumDataSource.swift in Sources */,
 				23BB9C74231DB78800DB7FB5 /* ReusableCell.swift in Sources */,
 				23BB9C79231DB7AD00DB7FB5 /* UICollectionView+dequeueCell.swift in Sources */,
 				23E59D842319ADF40050B1B7 /* ViewController.swift in Sources */,
 				231D0873231C4BD0005A99E4 /* DateFormatter+constants.swift in Sources */,
 				2360478A2319CCDB00AB2AAE /* Router.swift in Sources */,
+				23B466D0231E70F600213F59 /* ArtistDataSource.swift in Sources */,
 				23E59D8A2319ADF40050B1B7 /* TestTaskApp.xcdatamodeld in Sources */,
 				23E59DB42319BE070050B1B7 /* Artist.swift in Sources */,
 				236047882319CB9300AB2AAE /* RoutesProtocol.swift in Sources */,

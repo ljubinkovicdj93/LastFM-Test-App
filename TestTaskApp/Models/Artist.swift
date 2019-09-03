@@ -21,13 +21,36 @@ enum ImageSize {
 struct Artist: Decodable {
     let name: String
     let mbid: String
-    let url: String
+    let url: URL
     
     // MARK: - Optional properties
     // These might be omitted from some responses.
     let listeners: String?
     let streamable: String?
-    let image: [Image]?
+    let images: [Image]?
+    
+    enum ArtistKeys: String, CodingKey {
+        case name
+        case mbid
+        case url
+        case listeners
+        case streamable
+        case images = "image"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: ArtistKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        mbid = try container.decode(String.self, forKey: .mbid)
+        
+        let urlString = try container.decode(String.self, forKey: .url)
+        guard let artistUrl = URL(string: urlString) else { fatalError("The url string is not valid.") }
+        url = artistUrl
+        
+        listeners = try container.decodeIfPresent(String.self, forKey: .listeners)
+        streamable = try container.decodeIfPresent(String.self, forKey: .streamable)
+        images = try container.decodeIfPresent([Image].self, forKey: .images)
+    }
 }
 
 // MARK: - Image

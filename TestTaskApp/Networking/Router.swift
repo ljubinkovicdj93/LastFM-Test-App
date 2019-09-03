@@ -35,6 +35,24 @@ struct Router: URLRouter {
         var route: String = ""
         var queryItems: QueryItems!
     }
+    
+    struct ArtistsRoute: Readable {
+        var route: String = ""
+        var queryItems: QueryItems!
+    }
+}
+
+extension Router.ArtistsRoute {
+    // http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=cher&api_key=e1116ff78e72bee82a5e4e0db782ea05&format=json
+    static func searchRoute(artistName: String, pageNumber: Int = 1) -> RequestConverter {
+        let queryItems: QueryItems = [
+            URLQueryItem(name: "method", value: "artist.search"),
+            URLQueryItem(name: "artist", value: artistName),
+            URLQueryItem(name: "page", value: String(pageNumber))
+        ]
+        
+        return Router.AlbumsRoute.get(queryItems: queryItems)
+    }
 }
 
 extension Router.AlbumsRoute {

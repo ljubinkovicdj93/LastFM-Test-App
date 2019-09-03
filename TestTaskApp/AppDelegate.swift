@@ -104,6 +104,15 @@ struct AlbumSearchResult: Decodable {
 }
 
 
-struct AlbumResult: Decodable {
-    let album: Album
+// ARTIST _____________________________________________
+struct ArtistSearchResults: Decodable {
+    let results: ArtistMatches
+}
+
+struct ArtistMatches: Decodable {
+    let artistmatches: ArtistSearchResult
+}
+
+struct ArtistSearchResult: Decodable {
+    let artist: [Artist]
 }
