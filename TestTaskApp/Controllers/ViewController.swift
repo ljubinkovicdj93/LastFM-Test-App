@@ -15,11 +15,18 @@ class ViewController: UIViewController {
     
     private var albumDataSource: ArtistDataSource?
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        collectionView.register(AlbumCell.self)
-        collectionView.register(ArtistCell.self)
+//        collectionView.register(ArtistCell.self)
+        
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.decelerationRate = UIScrollView.DecelerationRate.normal
         
         #warning("TODO: Remove, use to test only.")
 //        AF.request(Router.AlbumsRoute.searchRoute(albumName: "Believe"))

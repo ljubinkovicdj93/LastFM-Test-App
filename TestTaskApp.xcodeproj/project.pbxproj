@@ -13,7 +13,7 @@
 		2360478A2319CCDB00AB2AAE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236047892319CCDB00AB2AAE /* Router.swift */; };
 		23B466D0231E70F600213F59 /* ArtistDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B466CF231E70F600213F59 /* ArtistDataSource.swift */; };
 		23B466D6231E773100213F59 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B466D4231E773100213F59 /* ArtistCell.swift */; };
-		23B466D7231E773100213F59 /* ArtistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23B466D5231E773100213F59 /* ArtistCell.xib */; };
+		23B466DA231E864B00213F59 /* ParallaxLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B466D9231E864B00213F59 /* ParallaxLayout.swift */; };
 		23BB9C68231DB31900DB7FB5 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB9C67231DB31900DB7FB5 /* AlbumCell.swift */; };
 		23BB9C6A231DB32E00DB7FB5 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23BB9C69231DB32E00DB7FB5 /* AlbumCell.xib */; };
 		23BB9C6E231DB71900DB7FB5 /* CollectionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB9C6D231DB71900DB7FB5 /* CollectionDataProvider.swift */; };
@@ -65,7 +65,7 @@
 		236047892319CCDB00AB2AAE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		23B466CF231E70F600213F59 /* ArtistDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDataSource.swift; sourceTree = "<group>"; };
 		23B466D4231E773100213F59 /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
-		23B466D5231E773100213F59 /* ArtistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistCell.xib; sourceTree = "<group>"; };
+		23B466D9231E864B00213F59 /* ParallaxLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxLayout.swift; sourceTree = "<group>"; };
 		23BB9C67231DB31900DB7FB5 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		23BB9C69231DB32E00DB7FB5 /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
 		23BB9C6D231DB71900DB7FB5 /* CollectionDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDataProvider.swift; sourceTree = "<group>"; };
@@ -159,6 +159,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		23B466D8231E861700213F59 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				23B466D9231E864B00213F59 /* ParallaxLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
 		23BB9C65231DB12A00DB7FB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +183,6 @@
 				23BB9C67231DB31900DB7FB5 /* AlbumCell.swift */,
 				23BB9C69231DB32E00DB7FB5 /* AlbumCell.xib */,
 				23B466D4231E773100213F59 /* ArtistCell.swift */,
-				23B466D5231E773100213F59 /* ArtistCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -233,6 +240,7 @@
 		23E59D802319ADF40050B1B7 /* TestTaskApp */ = {
 			isa = PBXGroup;
 			children = (
+				23B466D8231E861700213F59 /* Layouts */,
 				23BB9C77231DB79D00DB7FB5 /* Extensions */,
 				23BB9C6C231DB70200DB7FB5 /* DataProviders */,
 				23BB9C6B231DB6FB00DB7FB5 /* DataSources */,
@@ -429,7 +437,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23B466D7231E773100213F59 /* ArtistCell.xib in Resources */,
 				23E59D8F2319ADF50050B1B7 /* LaunchScreen.storyboard in Resources */,
 				23E59D8C2319ADF50050B1B7 /* Assets.xcassets in Resources */,
 				23E59D872319ADF40050B1B7 /* Main.storyboard in Resources */,
@@ -564,6 +571,7 @@
 				23BB9C68231DB31900DB7FB5 /* AlbumCell.swift in Sources */,
 				23BB9C70231DB72F00DB7FB5 /* ArrayDataProvider.swift in Sources */,
 				23BB9C7B231DB7FF00DB7FB5 /* CollectionArrayDataSource.swift in Sources */,
+				23B466DA231E864B00213F59 /* ParallaxLayout.swift in Sources */,
 				23BB9C6E231DB71900DB7FB5 /* CollectionDataProvider.swift in Sources */,
 				23BB9C72231DB75B00DB7FB5 /* CollectionDataSource.swift in Sources */,
 			);
