@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G99-8K-36t">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="82" width="414" height="780"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="drv-ms-Jie" customClass="ParallaxLayout" customModule="TestTaskApp" customModuleProvider="target"/>
                                 <cells>
@@ -85,18 +85,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dj0-1E-Yu1">
+                                <rect key="frame" x="8" y="44" width="398" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" returnKeyType="search" textContentType="name"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G99-8K-36t" secondAttribute="bottom" id="4VJ-uL-ej6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dj0-1E-Yu1" secondAttribute="trailing" constant="8" id="686-D4-nIa"/>
                             <constraint firstItem="G99-8K-36t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7lu-9c-LRl"/>
-                            <constraint firstItem="G99-8K-36t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LsW-zM-JOi"/>
+                            <constraint firstItem="dj0-1E-Yu1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Cyk-M2-tQF"/>
+                            <constraint firstItem="dj0-1E-Yu1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KSk-tF-OZ2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G99-8K-36t" secondAttribute="trailing" id="R8B-jY-5iu"/>
+                            <constraint firstItem="G99-8K-36t" firstAttribute="top" secondItem="dj0-1E-Yu1" secondAttribute="bottom" constant="8" id="xB3-8Z-cDw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="G99-8K-36t" id="FXu-lk-Xud"/>
+                        <outlet property="searchTextField" destination="dj0-1E-Yu1" id="jgM-Ao-lgA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

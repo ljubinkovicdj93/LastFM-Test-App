@@ -23,4 +23,8 @@ open class CollectionArrayDataSource<T, Cell: UICollectionViewCell>: CollectionD
     public func updateItem(at indexPath: IndexPath, value: T) {
         provider.updateItem(at: indexPath, value: value)
     }
+    
+    public func removeItems() {
+        provider.removeItems()
+    }
 }

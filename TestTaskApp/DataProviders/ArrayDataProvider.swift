@@ -19,12 +19,17 @@ public class ArrayDataProvider<T>: CollectionDataProvider {
     
     // MARK: - Collection Data Provider
     public func numberOfSections() -> Int {
+        guard items.count > 0 else { return 1 }
+        
         return items.count
     }
     
     public func numberOfItems(in section: Int) -> Int {
-        guard section >= 0, section <= items.count else { return 0 }
-        return items[section].count
+        if items.count == 0 {
+            return 1
+        } else {
+            return items[section].count
+        }
     }
     
     public func item(at indexPath: IndexPath) -> T? {
@@ -49,5 +54,13 @@ public class ArrayDataProvider<T>: CollectionDataProvider {
         }
         
         items[indexPath.section][indexPath.row] = value
+    }
+    
+    public func addItems(values: [T]) {
+        items.append(values)
+    }
+    
+    public func removeItems() {
+        items = []
     }
 }

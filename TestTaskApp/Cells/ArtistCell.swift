@@ -14,11 +14,20 @@ class ArtistCell: UICollectionViewCell, ConfigurableCell {
     @IBOutlet private weak var artistImageView: UIImageView!
     @IBOutlet private weak var imageCoverView: UIView!
 
-    func configure(_ item: Artist) {
-        nameLabel.text = item.name
+    func configure(_ item: Artist?) {
+        guard let artist = item else {
+            #warning("TODO: Localize this.")
+            nameLabel.text = "No data"
+            listenersCountLabel.text = "Please search for something..."
+            artistImageView.image = nil
+            
+            return
+        }
+        
+        nameLabel.text = artist.name
         #warning("TODO: Localize these.")
-        listenersCountLabel.text = "Listeners #: \(item.listeners ?? "0")"
-        if let mediumImgTxt = item.images?.filter({ $0.size == .medium }).first?.text,
+        listenersCountLabel.text = "Listeners #: \(artist.listeners ?? "0")"
+        if let mediumImgTxt = artist.images?.filter({ $0.size == .medium }).first?.text,
             let mediumImgUrl = URL(string: mediumImgTxt) {
             URLSession.shared.dataTask(with: mediumImgUrl) { (data, response, error) in
                 if error != nil { print("Failed fetching the image error."); return }

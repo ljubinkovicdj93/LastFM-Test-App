@@ -15,5 +15,6 @@ public protocol CollectionDataProvider {
     func numberOfItems(in section: Int) -> Int
     func item(at indexPath: IndexPath) -> T?
     
+    func addItems(values: [T])
     func updateItem(at indexPath: IndexPath, value: T)
 }

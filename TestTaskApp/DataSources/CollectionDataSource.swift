@@ -47,9 +47,8 @@ open class CollectionDataSource<Provider: CollectionDataProvider, Cell: UICollec
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: Cell = collectionView.dequeueCell(at: indexPath)
         
-        if let item = provider.item(at: indexPath) {
-            cell.configure(item)
-        }
+        let item = provider.item(at: indexPath)
+        cell.configure(item)
         
         return cell
     }
