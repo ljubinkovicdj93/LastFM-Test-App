@@ -14,7 +14,8 @@ class ArtistCell: UICollectionViewCell, ConfigurableCell {
     @IBOutlet private weak var artistImageView: UIImageView!
     @IBOutlet private weak var imageCoverView: UIView!
 
-    func configure(_ item: Artist) {
+    func configure(_ item: Artist?) {
+        guard let item = item else { return }
         nameLabel.text = item.name
         #warning("TODO: Localize these.")
         listenersCountLabel.text = "Listeners #: \(item.listeners ?? "0")"

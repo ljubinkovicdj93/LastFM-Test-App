@@ -10,12 +10,14 @@ import UIKit
 
 public typealias CollectionItemSelectionHandlerType = (IndexPath) -> Void
 public typealias CollectionItemDeselectionHandlerType = (IndexPath) -> Void
+public typealias OnPrefetchHandlerType = ([IndexPath]) -> Void
 
-open class CollectionDataSource<Provider: CollectionDataProvider, Cell: UICollectionViewCell>: NSObject, UICollectionViewDataSource, UICollectionViewDelegate where Cell: ConfigurableCell, Provider.T == Cell.T {
+open class CollectionDataSource<Provider: CollectionDataProvider, Cell: UICollectionViewCell>: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDataSourcePrefetching where Cell: ConfigurableCell, Provider.T == Cell.T {
     
     // MARK: - Public Properties
     public var collectionItemSelectionHandler: CollectionItemSelectionHandlerType?
     public var collectionItemDeselectionHandler: CollectionItemDeselectionHandlerType?
+    public var onPrefetchHandler: OnPrefetchHandlerType?
     
     // MARK: - Private Properties
     let provider: Provider
@@ -33,9 +35,10 @@ open class CollectionDataSource<Provider: CollectionDataProvider, Cell: UICollec
     private func setUp() {
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.prefetchDataSource = self
     }
     
-    // MARK: - UICollectionView Delegate
+    // MARK: - UICollectionView Data Source
     public func numberOfSections(in _: UICollectionView) -> Int {
         return provider.numberOfSections()
     }
@@ -49,17 +52,12 @@ open class CollectionDataSource<Provider: CollectionDataProvider, Cell: UICollec
         
         if let item = provider.item(at: indexPath) {
             cell.configure(item)
-        } else {
-            let nothingFoundCell: NothingFoundCell = collectionView.dequeueCell(at: indexPath)
-            #warning("TODO: LOCALIZE THIS")
-            nothingFoundCell.configure("Nothing found.")
-            
-            return nothingFoundCell
         }
         
         return cell
     }
     
+    // MARK: - UICollectionView Delegate
     public func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionItemSelectionHandler?(indexPath)
     }
@@ -71,5 +69,9 @@ open class CollectionDataSource<Provider: CollectionDataProvider, Cell: UICollec
     open func collectionView(_: UICollectionView, viewForSupplementaryElementOfKind _: String, at _: IndexPath) -> UICollectionReusableView {
         return UICollectionReusableView(frame: .zero)
     }
+    
+    // MARK: - UICollectionViewDataSourcePrefetching Delegate
+    open func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        onPrefetchHandler?(indexPaths)
+    }
 }
-

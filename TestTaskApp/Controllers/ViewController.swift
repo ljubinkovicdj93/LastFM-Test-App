@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     private var artistDataSource: ArtistDataSource?
+    private var currentPage: Int = 1
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
     
     // MARK: - Setup
     private func setupViews() {
+        collectionView.register(ArtistCell.self)
         collectionView.register(NothingFoundCell.self)
         
         collectionView.backgroundColor = UIColor.clear
@@ -50,6 +52,10 @@ class ViewController: UIViewController {
             
             print(dataSource.item(at: indexPath) ?? "NO ITEM FOUND")
             //            self.performSegue(withIdentifier: "someSegue", sender: nil)
+        }
+        
+        dataSource.onPrefetchHandler = { [weak self] indexPaths in
+            print("Current Page: \(self?.currentPage)")
         }
         
         return dataSource

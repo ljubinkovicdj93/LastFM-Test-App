@@ -23,65 +23,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="drv-ms-Jie" customClass="ParallaxLayout" customModule="TestTaskApp" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ArtistCell" id="ofE-4s-goR" customClass="ArtistCell" customModule="TestTaskApp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="ofE-4s-goR">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hAa-Gm-MS8">
-                                                    <rect key="frame" x="0.0" y="-40" width="200" height="280"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="280" id="Qcy-0g-bAO"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qU-GA-kvc" userLabel="Image Cover View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPJ-ew-aNr" userLabel="Artist Name">
-                                                    <rect key="frame" x="8" y="78" width="184" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="VfL-0x-1Um"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="32"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cM-Pf-2Vb" userLabel="Artist Number of Listeners">
-                                                    <rect key="frame" x="8" y="122" width="184" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="f8a-Bl-Jpr"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="NPJ-ew-aNr" firstAttribute="centerY" secondItem="ofE-4s-goR" secondAttribute="centerY" id="0JF-5O-gLo"/>
-                                            <constraint firstItem="9qU-GA-kvc" firstAttribute="leading" secondItem="ofE-4s-goR" secondAttribute="leading" id="NtC-Vp-McD"/>
-                                            <constraint firstItem="9qU-GA-kvc" firstAttribute="top" secondItem="ofE-4s-goR" secondAttribute="top" id="SeD-QU-KTu"/>
-                                            <constraint firstItem="8cM-Pf-2Vb" firstAttribute="leading" secondItem="ofE-4s-goR" secondAttribute="leadingMargin" id="T6h-Pr-ndn"/>
-                                            <constraint firstItem="hAa-Gm-MS8" firstAttribute="leading" secondItem="ofE-4s-goR" secondAttribute="leading" id="TE9-jH-SAZ"/>
-                                            <constraint firstItem="hAa-Gm-MS8" firstAttribute="centerY" secondItem="ofE-4s-goR" secondAttribute="centerY" id="TfI-Ms-2N8"/>
-                                            <constraint firstAttribute="trailing" secondItem="hAa-Gm-MS8" secondAttribute="trailing" id="UJA-ks-eWf"/>
-                                            <constraint firstAttribute="trailing" secondItem="9qU-GA-kvc" secondAttribute="trailing" id="d9I-Bv-vAh"/>
-                                            <constraint firstAttribute="bottom" secondItem="9qU-GA-kvc" secondAttribute="bottom" id="gZl-ed-fXz"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="8cM-Pf-2Vb" secondAttribute="trailing" id="hOq-s4-wb8"/>
-                                            <constraint firstItem="NPJ-ew-aNr" firstAttribute="bottom" secondItem="8cM-Pf-2Vb" secondAttribute="top" id="iEv-ju-RN6"/>
-                                            <constraint firstItem="NPJ-ew-aNr" firstAttribute="leading" secondItem="ofE-4s-goR" secondAttribute="leadingMargin" id="neq-ft-blZ"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="NPJ-ew-aNr" secondAttribute="trailing" id="uec-f2-Emd"/>
-                                        </constraints>
                                         <size key="customSize" width="200" height="200"/>
-                                        <connections>
-                                            <outlet property="artistImageView" destination="hAa-Gm-MS8" id="4hW-J5-TMk"/>
-                                            <outlet property="imageCoverView" destination="9qU-GA-kvc" id="X4e-Vz-tCg"/>
-                                            <outlet property="listenersCountLabel" destination="8cM-Pf-2Vb" id="uRY-9c-ZLp"/>
-                                            <outlet property="nameLabel" destination="NPJ-ew-aNr" id="EQC-UE-8ff"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
