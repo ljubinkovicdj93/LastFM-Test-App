@@ -13,10 +13,9 @@ class AlbumCell: UICollectionViewCell, ConfigurableCell {
     @IBOutlet private weak var artistLabel: UILabel!
     @IBOutlet private weak var albumImageView: UIImageView!
     
-    func configure(_ item: Album?) {
-        guard let album = item else { return }
-        nameLabel.text = album.name
-        artistLabel.text = album.artist
-        albumImageView.image = UIImage(named: album.images.last!.text)
+    func configure(_ item: Album) {
+        nameLabel.text = item.name
+        artistLabel.text = item.artist
+        albumImageView.image = UIImage(named: item.images.last!.text)
     }
 }

@@ -47,8 +47,15 @@ open class CollectionDataSource<Provider: CollectionDataProvider, Cell: UICollec
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: Cell = collectionView.dequeueCell(at: indexPath)
         
-        let item = provider.item(at: indexPath)
-        cell.configure(item)
+        if let item = provider.item(at: indexPath) {
+            cell.configure(item)
+        } else {
+            let nothingFoundCell: NothingFoundCell = collectionView.dequeueCell(at: indexPath)
+            #warning("TODO: LOCALIZE THIS")
+            nothingFoundCell.configure("Nothing found.")
+            
+            return nothingFoundCell
+        }
         
         return cell
     }
