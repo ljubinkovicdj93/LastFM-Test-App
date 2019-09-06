@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     private var artistDataSource: ArtistDataSource?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
+        return UIStatusBarStyle.default
     }
     
     // MARK: - Lifecycle
@@ -56,36 +56,10 @@ class ViewController: UIViewController {
     }
     
     private func setupSearchBar() {
-        // Set the throttle interval. We will receive a new
-        // value to search for an interval >= 0.5 seconds.
-        searchBar.throttlingInterval = 0.5
-        
         // Receive events for search
-        searchBar.onSearch = { text in
-            // user tapped the 'X' button
-            if text.count > SearchBar.MIN_CHARS_TO_SEARCH {
-                AF.request(Router.ArtistsRoute.searchRoute(artistName: text))
-                    .validate()
-                    .responseDecodable { [weak self] (response: DataResponse<ArtistSearchResults>) in
-                        guard let self = self else { return }
-                        
-                        switch response.result {
-                        case .success(let artistResults):
-                            guard !artistResults.results.artistmatches.artist.isEmpty else {
-                                self.refreshList()
-                                return
-                            }
-                            
-                            let artistList = artistResults.results.artistmatches.artist
-                            
-                            self.refreshList(with: artistList)
-                            
-                            debugPrint(response)
-                        case .failure(let error):
-                            fatalError(error.localizedDescription)
-                        }
-                }
-            }
+        searchBar.onSearch = { [unowned self] text in
+            guard !text.isEmpty else { return }
+            self.reloadData(text)
         }
     }
     
@@ -97,6 +71,34 @@ class ViewController: UIViewController {
         }
         DispatchQueue.main.async {
             self.collectionView.reloadData()
+        }
+    }
+    
+    private func handleResponse(_ result: Result<ArtistSearchResults, Error>) {
+        switch result {
+        case .success(let artistResults):
+            guard !artistResults.results.artistmatches.artist.isEmpty else {
+                self.refreshList()
+                return
+            }
+            
+            let artistList = artistResults.results.artistmatches.artist
+            
+            self.refreshList(with: artistList)
+        case .failure(let error):
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    private func reloadData(_ text: String?) {
+        guard
+            let txt = text,
+            !txt.isEmpty
+            else { return }
+        
+        Router.ArtistsRoute.searchAll(txt) { [weak self] (result: Result<ArtistSearchResults, Error>) in
+            guard let self = self else { return }
+            self.handleResponse(result)
         }
     }
 }

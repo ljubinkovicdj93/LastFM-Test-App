@@ -44,7 +44,7 @@ struct Router: URLRouter {
 
 extension Router.ArtistsRoute {
     // http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=cher&api_key=e1116ff78e72bee82a5e4e0db782ea05&format=json
-    static func searchRoute(artistName: String, pageNumber: Int = 1) -> RequestConverter {
+    private static func searchRoute(artistName: String, pageNumber: Int = 1) -> RequestConverter {
         let queryItems: QueryItems = [
             URLQueryItem(name: "method", value: "artist.search"),
             URLQueryItem(name: "artist", value: artistName),
@@ -53,10 +53,18 @@ extension Router.ArtistsRoute {
         
         return Router.AlbumsRoute.get(queryItems: queryItems)
     }
+    
+    static func searchAll(_ artistName: String, _ completion: @escaping (_ artists: Result<ArtistSearchResults, Error>) -> ()) {
+        AF.request(Router.ArtistsRoute.searchRoute(artistName: artistName))
+            .validate()
+            .responseDecodable { (response: DataResponse<ArtistSearchResults>) in
+                completion(response.result)
+        }
+    }
 }
 
 extension Router.AlbumsRoute {
-//    /2.0/?method=album.search&album=believe&api_key=YOUR_API_KEY
+    //    /2.0/?method=album.search&album=believe&api_key=YOUR_API_KEY
     static func searchRoute(albumName: String) -> RequestConverter {
         let queryItems: QueryItems = [
             URLQueryItem(name: "method", value: "album.search"),
@@ -66,7 +74,7 @@ extension Router.AlbumsRoute {
         return Router.AlbumsRoute.get(queryItems: queryItems)
     }
     
-// /2.0/?method=album.getinfo&api_key=YOUR_API_KEY&artist=Cher&album=Believe
+    // /2.0/?method=album.getinfo&api_key=YOUR_API_KEY&artist=Cher&album=Believe
     static func getInfoRoute(artistName: String, albumName: String) -> RequestConverter {
         let queryItems: QueryItems = [
             URLQueryItem(name: "method", value: "album.getinfo"),

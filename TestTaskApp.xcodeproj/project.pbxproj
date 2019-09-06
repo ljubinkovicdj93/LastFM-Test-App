@@ -11,7 +11,6 @@
 		231D0873231C4BD0005A99E4 /* DateFormatter+constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D0872231C4BD0005A99E4 /* DateFormatter+constants.swift */; };
 		236047882319CB9300AB2AAE /* RoutesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236047872319CB9300AB2AAE /* RoutesProtocol.swift */; };
 		2360478A2319CCDB00AB2AAE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236047892319CCDB00AB2AAE /* Router.swift */; };
-		237331A423215CE100C3A909 /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237331A323215CE100C3A909 /* Throttler.swift */; };
 		237331A623223AB600C3A909 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237331A523223AB600C3A909 /* SearchBar.swift */; };
 		23B466D0231E70F600213F59 /* ArtistDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B466CF231E70F600213F59 /* ArtistDataSource.swift */; };
 		23B466D6231E773100213F59 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B466D4231E773100213F59 /* ArtistCell.swift */; };
@@ -67,7 +66,6 @@
 		231D0872231C4BD0005A99E4 /* DateFormatter+constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+constants.swift"; sourceTree = "<group>"; };
 		236047872319CB9300AB2AAE /* RoutesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesProtocol.swift; sourceTree = "<group>"; };
 		236047892319CCDB00AB2AAE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		237331A323215CE100C3A909 /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		237331A523223AB600C3A909 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		23B466CF231E70F600213F59 /* ArtistDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDataSource.swift; sourceTree = "<group>"; };
 		23B466D4231E773100213F59 /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 		237331A223215CD000C3A909 /* SearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				237331A323215CE100C3A909 /* Throttler.swift */,
 				237331A523223AB600C3A909 /* SearchBar.swift */,
 			);
 			path = SearchBar;
@@ -589,7 +586,6 @@
 				23EB591A231A92AB00288A78 /* Environment.swift in Sources */,
 				23E59D822319ADF40050B1B7 /* AppDelegate.swift in Sources */,
 				23E59DB62319BEE30050B1B7 /* Album.swift in Sources */,
-				237331A423215CE100C3A909 /* Throttler.swift in Sources */,
 				23E59DB82319C3D50050B1B7 /* Track.swift in Sources */,
 				23BB9C68231DB31900DB7FB5 /* AlbumCell.swift in Sources */,
 				23BB9C70231DB72F00DB7FB5 /* ArrayDataProvider.swift in Sources */,

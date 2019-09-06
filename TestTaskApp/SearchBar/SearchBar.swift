@@ -8,24 +8,11 @@
 
 import UIKit
 
+fileprivate extension Selector {
+    static let reloadData = #selector(SearchBar.reloadData(_:))
+}
 
 class SearchBar: UISearchBar {
-    static let MIN_CHARS_TO_SEARCH: Int = 2
-    
-    /// Throttle engine
-    private var throttler: Throttler? = nil
-    
-    /// Throttling interval
-    var throttlingInterval: Double? = 0 {
-        didSet {
-            guard let interval = throttlingInterval else {
-                self.throttler = nil
-                return
-            }
-            self.throttler = Throttler(seconds: Int(interval))
-        }
-    }
-    
     /// Event received when cancel is pressed
     var onCancel: (() -> (Void))? = nil
     
@@ -34,6 +21,7 @@ class SearchBar: UISearchBar {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.enablesReturnKeyAutomatically = true
         self.delegate = self
     }
 }
@@ -46,17 +34,21 @@ extension SearchBar: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.onSearch?(self.text ?? "")
+        self.resignFirstResponder()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard let throttler = self.throttler else {
-            self.onSearch?(searchText)
-            return
-        }
-        throttler.throttle {
-            DispatchQueue.main.async {
-                self.onSearch?(self.text ?? "")
-            }
-        }
+        NSObject.cancelPreviousPerformRequests(withTarget: self,
+                                               selector: .reloadData,
+                                               object: nil)
+        
+        // We will receive a new value to search for an interval >= 0.5 seconds.
+        self.perform(.reloadData,
+                     with: searchText,
+                     afterDelay: 0.5)
+    }
+    
+    @objc fileprivate func reloadData(_ text: String?) {
+        self.onSearch?(self.text ?? "")
     }
 }
