@@ -12,6 +12,7 @@
 		236047882319CB9300AB2AAE /* RoutesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236047872319CB9300AB2AAE /* RoutesProtocol.swift */; };
 		2360478A2319CCDB00AB2AAE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236047892319CCDB00AB2AAE /* Router.swift */; };
 		237331A623223AB600C3A909 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237331A523223AB600C3A909 /* SearchBar.swift */; };
+		237331AA23226FB000C3A909 /* UIColor+convenienceInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237331A923226FB000C3A909 /* UIColor+convenienceInit.swift */; };
 		23B466D0231E70F600213F59 /* ArtistDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B466CF231E70F600213F59 /* ArtistDataSource.swift */; };
 		23B466D6231E773100213F59 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B466D4231E773100213F59 /* ArtistCell.swift */; };
 		23B466DA231E864B00213F59 /* ParallaxLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B466D9231E864B00213F59 /* ParallaxLayout.swift */; };
@@ -67,6 +68,7 @@
 		236047872319CB9300AB2AAE /* RoutesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesProtocol.swift; sourceTree = "<group>"; };
 		236047892319CCDB00AB2AAE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		237331A523223AB600C3A909 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		237331A923226FB000C3A909 /* UIColor+convenienceInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+convenienceInit.swift"; sourceTree = "<group>"; };
 		23B466CF231E70F600213F59 /* ArtistDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDataSource.swift; sourceTree = "<group>"; };
 		23B466D4231E773100213F59 /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		23B466D9231E864B00213F59 /* ParallaxLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxLayout.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				23BB9C78231DB7AD00DB7FB5 /* UICollectionView+dequeueCell.swift */,
+				237331A923226FB000C3A909 /* UIColor+convenienceInit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				23BB9C74231DB78800DB7FB5 /* ReusableCell.swift in Sources */,
 				23BB9C79231DB7AD00DB7FB5 /* UICollectionView+dequeueCell.swift in Sources */,
 				23E59D842319ADF40050B1B7 /* ViewController.swift in Sources */,
+				237331AA23226FB000C3A909 /* UIColor+convenienceInit.swift in Sources */,
 				231D0873231C4BD0005A99E4 /* DateFormatter+constants.swift in Sources */,
 				2360478A2319CCDB00AB2AAE /* Router.swift in Sources */,
 				23B466D0231E70F600213F59 /* ArtistDataSource.swift in Sources */,
