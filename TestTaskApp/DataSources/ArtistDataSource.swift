@@ -14,7 +14,10 @@ class ArtistDataSource: CollectionArrayDataSource<Artist, ArtistCell> {
     private var isFetchingNextPage: Bool = false
     
     private var artists: [Artist] {
-        return provider.items[0]
+        if !provider.items.isEmpty {
+            return provider.items[0]
+        }
+        return []
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
